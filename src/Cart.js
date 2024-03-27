@@ -5,9 +5,12 @@ import { useCartContext } from "./Context/Cartcontexts";
 import CartItem from "./CartItem";
 import { NavLink } from "react-router-dom";
 import Helper from "./Helper/Helper";
+import { useEffect } from "react";
 const Cart = () => {
   const { cart ,clearCart,shipping_fee,total_price} = useCartContext();
-
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
   console.log("Cart items:", cart);
   if (cart.length === 0) {
     return (

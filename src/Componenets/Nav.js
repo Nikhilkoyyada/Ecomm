@@ -1,4 +1,4 @@
-// Nav.js
+
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -11,7 +11,10 @@ const Nav = () => {
   const [menuIcon, setMenuIcon] = useState(false);
   const { total_item } = useCartContext();
   
-
+  const handleNavLinkClick = () => {
+    window.scrollTo(0, 0); 
+    setMenuIcon(false); 
+  };
 
 
 
@@ -179,16 +182,16 @@ const Nav = () => {
       <div className={menuIcon ? "navbar active" : "navbar"}>
         <ul className="navbar-lists">
           <li>
-            <NavLink to="/" className='navbar-link' onClick={() => setMenuIcon(false)}>Home</NavLink>
+            <NavLink to="/" className='navbar-link'onClick={handleNavLinkClick}>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about" className='navbar-link' onClick={() => setMenuIcon(false)}>About</NavLink>
+            <NavLink to="/about" className='navbar-link' onClick={handleNavLinkClick}>About</NavLink>
           </li>
           <li>
-            <NavLink to="/products" className='navbar-link' onClick={() => setMenuIcon(false)}>Products</NavLink>
+            <NavLink to="/products" className='navbar-link'onClick={handleNavLinkClick}>Products</NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className='navbar-link' onClick={() => setMenuIcon(false)}>Contact</NavLink>
+            <NavLink to="/contact" className='navbar-link'onClick={handleNavLinkClick}>Contact</NavLink>
           </li>
           <li>
             <NavLink to="/cart" className='navbar-link  cart-trolley--link'>

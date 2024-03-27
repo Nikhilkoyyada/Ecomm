@@ -4,6 +4,7 @@ import Helper from './Helper/Helper';
  import CartAmountToggle from './Componenets/CartAmountToggle';
  import { useCartContext } from './Context/Cartcontexts';
 const CartItem = ({ id, name, image, color, price, amount }) => {
+  
   const { removeItem,setDecrease,setIncrement} = useCartContext();
   return (
     <div  key={id}  className="cart_heading grid grid-five-column">
